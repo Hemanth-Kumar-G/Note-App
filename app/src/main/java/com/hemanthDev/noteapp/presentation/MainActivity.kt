@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.hemanthDev.noteapp.presentation.addEditNote.AddEditNoteScreen
 import com.hemanthDev.noteapp.presentation.notes.NotesScreen
 import com.hemanthDev.noteapp.presentation.util.Screen
 import com.hemanthDev.noteapp.ui.theme.NoteAppTheme
@@ -53,7 +54,10 @@ class MainActivity : ComponentActivity() {
                             )
                         ) {
                             val color = it.arguments?.getInt("noteColor") ?: -1
-
+                            AddEditNoteScreen(
+                                navController = navController,
+                                noteColor = color
+                            )
                         }
                     }
                 }
